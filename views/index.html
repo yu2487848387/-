@@ -1,0 +1,58 @@
+
+{{extend './base.html'}}
+
+{{block 'title'}}博客{{/block}}
+
+{{block 'css'}}<link rel="stylesheet" href="../public/css/index.css">{{/block}}
+
+
+{{ block 'content'}}
+<div class="body">
+    <div class="body_left">
+        <div class="banner">
+            <a href="#"><img id="banner_img" src="../public/img/year1.jpg" alt=""></a>
+            <div class="imgPoint">
+                <a href="javascript:" class="">1</a>
+                <a href="javascript:" class="">2</a>
+                <a href="javascript:" class="">3</a>
+                <a href="javascript:" class="">4</a>
+            </div>
+            <div class="img_left">
+                <a class="imgBoth" href="javascript:"><span class="icon iconfont">&#xe636;</span></a>
+            </div>
+            <div class="img_right">
+                <a class="imgBoth" href="javascript:"><span class="icon iconfont">&#xe636;</span></a>
+            </div>
+        </div>
+        {{each articles}}
+        <div class="blog">
+            <div class="blog_img">
+                {{if $value.firstImg}}
+                <a href="/details?article={{$value.id}}"><img src="{{$value.firstImg}}" alt=""></a>
+                {{/if}}
+            </div>
+            <div class="blog_title"><a href="/details?article={{$value.id}}">{{$value.title}}</a></div>
+            <div class="blog_content"><p>{{ $value.abstract}}...</p></div>
+            <div class="blog_user">
+                <span class="icon iconfont">&#xe638;</span>
+                <a href="/user/{{$value.authorId}}" class="user_name">{{$value.authorName}}</a>
+                <span class="user_center"><span class="icon iconfont">&#xe620;</span>{{$value.commentNumber}}</span>
+                <span><span class="icon iconfont">&#xe633;</span>{{$value.likes}}</span>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <div class="body_right">
+        <a href="#" class="tip1">博客会员</a>
+        <a href="#" class="tip2">优书连载</a>
+        <a href="#" class="tip3">博客版权</a>
+        <a href="#" class="tip4">理想学堂</a>
+    </div>
+</div>
+{{ /block }}
+
+{{block 'js'}}
+<script src="../public/js/index.js" type="text/javascript"></script>
+{{/block}}
+
+

@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.w-e-text-container {
+    min-height: 500px;
+}
+
+.contain {
+    width: 960px;
+    margin: 30px auto;
+    padding-top: 40px;
+}
+
+.contain .title {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.contain .title input {
+    width: 960px;
+    height: 35px;
+    background-color: #EFEFEF;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    text-indent: 15px;
+}
+
+.contain .title .input_btn {
+    position: absolute;
+    top: 610px;
+    background-color: white;
+    border: 1px solid #C92027;
+    color: #C92027;
+}
+
+.contain .title .input_btn:hover {
+    background-color: #C92027;
+    color: white;
+}
+
+.home {
+    position: absolute;
+    top: 40px;
+    left: 30px;
+    text-align: center;
+    width: 90px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px #e74c3c solid;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.home a {
+    display: inline-block;
+    width: 94px;
+    height: 36px;
+    text-decoration: none;
+    color: #e74c3c;
+}
+
+.home a:hover {
+    color: white;
+    background-color: #e74c3c;
+}
+
+.tips{
+    color: white;
+    width: 120px;
+    height: 35px;
+    background-color: #ff7675;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 35px;
+    display: none;
+    position: absolute;
+    left:650px;
+    top:15px
+}

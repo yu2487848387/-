@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F1F1F1;
+}
+
+.content {
+    width: 400px;
+    /*height: 560px;*/
+    background-color: #FFFFFF;
+    margin: 80px auto;
+    padding-top: 10px;
+    box-shadow: 0 5px 8px rgba(0,0,0,.1);
+    -webkit-filter: drop-shadow(0 2px 8px rgba(0,0,0,.1));
+    border-radius: 6px;
+    padding-bottom: 80px;
+}
+
+.content .header {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.content .header a {
+    text-decoration: none;
+    color: #969696;
+    font-size: 25px;
+}
+
+.content .header span {
+    margin: 0 20px;
+}
+
+.content .header a:hover {
+    border-bottom: 2px solid #EA6F5A;
+}
+.content .header .register{
+    border-bottom: 2px solid #EA6F5A;
+}
+.content .header .login{
+    border-bottom: 2px solid #EA6F5A;
+}
+.content .body {
+    margin-top: 60px;
+}
+
+.content .body input {
+    margin: 0 auto;
+    display: block;
+    width: 300px;
+    height: 50px;
+    outline: none;
+    border: 1px solid #c8c8c8;
+    background-color: #F7F7F7;
+    text-indent: 10px;
+}
+
+.content .body .input_center {
+    border-top: none;
+    border-bottom: none;
+}
+.content .body .input_top {
+    border-radius: 4px 4px 0 0;
+}
+
+.content .body .input_bottom {
+    border-radius: 0 0 4px 4px;
+}
+
+.content .body .btn {
+    margin-top: 20px;
+    background-color: #3DB922;
+    color: white;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.content .body .btn:hover{
+    background-color: #18B926;
+}
+
+.content .express{
+    width: 300px;
+    margin:20px auto;
+    text-align: center;
+}
+
+.content .express span {
+    text-align: center;
+    width: 300px;
+    color: #969696;
+    font-size: 12px;
+}
+.content .express .span_color{
+    color: #3194d0;
+}
+
+.title{
+    position: absolute;
+    top:40px;
+    left: 40px;
+}
+.title a{
+    font-size: 38px;
+    text-decoration: none;
+    color: #EA6F5A;
+    font-weight: bolder;
+}
+
+.content .forget{
+    text-align: center;
+    margin-top: 20px;
+}
+.content .forget a{
+    text-decoration: none;
+    color: gray;
+}
+.content .forget a:hover{
+    border-bottom: 1px solid #777777;
+}
+
+.tips_register{
+    line-height: 45px;
+    text-align: center;
+    position: absolute;
+    width: 400px;
+    height: 45px;
+    color: #EA6F5A;
+    background-color: white;
+    top:20px;
+    left: 570px;
+    border-radius: 6px;
+    border: 1px solid #EA6F5A;
+    display: none;
+}
+
+.tips_register_show{
+   display: block;
+}

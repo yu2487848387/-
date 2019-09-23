@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>后台</title>
+    <link rel="stylesheet" type="text/css" href="../public/other/bootstrap.css"/>
+    <link rel="stylesheet" href="../public/font_icon/iconfont.css">
+    <link rel="stylesheet" href="../public/css/background.css">
+</head>
+<body>
+<!-- 导航栏部分 -->
+<div class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-brand">博客后台管理系统</div>
+        </div>
+        <ul class="nav navbar-nav nav-stacked navbar-right">
+            <li>
+                <a href="#" data-toggle="dropdown">
+                    <img class="img-circle" src="../public/img/tou.png" width="30" height="30"/>
+                    <span>{{admin.adminName}}</span>
+                    <span class="caret"></span>
+                </a>
+                <ul class="nav nav-pills nav-stacked dropdown-menu">
+                    <li>
+                        <a href="/">
+                            <span>返回站点</span>
+                        </a>
+                        <a href="/admin/logout">
+                            <span>退出</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- 页面部分 -->
+<div class="row">
+    <div class="col-sm-2">
+        <div class="panel-group" id="box">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <a href="/background"  class="panel-title">用户管理</a>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <a href="/background/article" class="panel-title">文章管理</a>
+                </div>
+            </div>
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <a href="/background/comment"  class="panel-title">评论管理</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{if users}}
+    <div class="col-sm-10">
+        <div class="panle panel-success">
+            <div class="panel-heading">
+                <a class="panel-title">用户管理</a>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>nickname</th>
+                        <th>age</th>
+                        <th>state</th>
+                        <th>QQ</th>
+                        <th>email</th>
+                        <th>权限</th>
+                        <th>删除</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{each users}}
+                    <tr>
+                        <td>{{$value._id}}</td>
+                        <td>{{$value.nickname}}</td>
+                        <td>{{$value.age}}</td>
+                        <td>{{$value.state}}</td>
+                        <td>{{$value.qq}}</td>
+                        <td>{{$value.email}}</td>
+                        <td>
+                            <select class="form-control" uId="{{$value.id}}" state="{{$value.state}}">
+                                <option value="1">默认</option>
+                                <option value="2">禁止登陆</option>
+                                <option value="3">禁止发文</option>
+                                <option value="4">禁止评论</option>
+                            </select>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary del" uId="{{$value.id}}" onclick="del(this)">删除</button>
+                        </td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    {{if article}}
+    <div class="col-sm-10">
+        <div class="panle panel-success">
+            <div class="panel-heading">
+                <a class="panel-title">文章管理</a>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>title</th>
+                        <th>author</th>
+                        <th>wordNumber</th>
+                        <th>commentNumber</th>
+                        <th>createTime</th>
+                        <th>删除</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{each article}}
+                    <tr>
+                        <td>{{$value._id}}</td>
+                        <td>{{$value.title}}</td>
+                        <td>{{$value.authorName}}</td>
+                        <td>{{$value.wordNumber}}</td>
+                        <td>{{$value.commentNumber}}</td>
+                        <td>{{$value.createTime}}</td>
+                        <td>
+                            <button class="btn btn-primary del" aId="{{$value.id}}" onclick="del2(this)">删除</button>
+                        </td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    {{if comment}}
+    <div class="col-sm-10">
+        <div class="panle panel-success">
+            <div class="panel-heading">
+                <a class="panel-title">评论管理</a>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped table-hover">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>content</th>
+                        <th>author</th>
+                        <th>likes</th>
+                        <th>createTime</th>
+                        <th>删除</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{each comment}}
+                    <tr>
+                        <td>{{$value._id}}</td>
+                        <td>{{$value.content}}</td>
+                        <td>{{$value.userName}}</td>
+                        <td>{{$value.likes}}</td>
+                        <td>{{$value.createTime}}</td>
+                        <td>
+                            <button class="btn btn-primary del" cId="{{$value.id}}" onclick="del3(this)">删除</button>
+                        </td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+</div>
+<script type="text/javascript" src="../public/other/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="../public/other/bootstrap.js"></script>
+<script src="../public/js/background.js"></script>
+</body>
+</html>

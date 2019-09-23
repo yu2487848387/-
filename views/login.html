@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+    <link rel="stylesheet" href="../public/css/register.css">
+</head>
+<body>
+<div id="tips_register" class="tips_register"></div>
+<div class="title"><a href="/">博客</a></div>
+<div class="content">
+    <div class="header">
+        <a href="/register">注册</a>
+        <span>*</span>
+        <a href="/login" class="login">登陆</a>
+    </div>
+    <div class="body">
+        <form action="/login" method="post" id="login_form">
+            <input class="input_top" type="email" name="email" placeholder="邮箱" required>
+            <input class="input_bottom" type="password" name="password" placeholder="密码" required>
+            <input class="btn" type="submit" value="登陆">
+        </form>
+    </div>
+    <div class="forget">
+        <a href="#">忘记密码</a>
+    </div>
+</div>
+<script src="../public/other/jquery-3.4.1.min.js"></script>
+<script>
+    $('#login_form').on('submit', function (e) {
+        e.preventDefault();
+        var form_data = $(this).serialize();
+        $.ajax({
+            url: '/login',
+            type: 'post',
+            data: form_data,
+            dateType: 'json',
+            success: function (data) {
+                if (data.tips_type === 0) {
+                    $('#tips_register').text('账号或者密码错误！');
+                    $('#tips_register').slideDown(500, function () {
+                        setTimeout(function () {
+                            $('#tips_register').slideUp(500)
+                        }, 2000);
+                    })
+                } else if (data.tips_type === 1) {
+                    location.href = '/'  //对于异步请求，服务端重定向无效，只能客户端重定向
+                } else if (data.tips_type === 2) {
+                    $('#tips_register').text('该账号已被冻结！');
+                    $('#tips_register').slideDown(500, function () {
+                        setTimeout(function () {
+                            $('#tips_register').slideUp(500)
+                        }, 2000);
+                    })
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>

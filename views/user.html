@@ -1,0 +1,112 @@
+{{extend './base.html'}}
+
+{{block 'title'}}用户{{/block}}
+
+{{block 'css'}}
+<link rel="stylesheet" href="../public/font_icon2/iconfont.css">
+<link rel="stylesheet" href="../public/css/user.css">
+<script src="../node_modules/art-template/lib/template-web.js"></script>
+{{/block}}
+
+{{block 'content'}}
+
+<div class="contain">
+    <div class="left">
+        <div class="userInformation">
+            <img src="../{{u.header_img}}" alt="user">
+            <div class="userText">
+                <div class="userName">
+                    <a href="javascript:" id="PERSON" other="{{u.id}}" {{if user}} my="{{user._id}}" {{else}} my="0000"
+                       {{/if}} >{{u.nickname}}</a>
+                </div>
+                <div class="userList">
+                    <ul>
+                        <li><a href="#"><span>3</span>
+                            <p>关注 ></p></a></li>
+                        <li><a href="#"><span>57</span>
+                            <p>粉丝 ></p></a></li>
+                        <li><a href="#"><span>126</span>
+                            <p>文章 ></p></a></li>
+                        <li><a href="#"><span>3889</span>
+                            <p>字数 ></p></a></li>
+                        <li><a href="#"><span>356</span>
+                            <p>收获喜欢 ></p></a></li>
+                        <li><a href="#" class="btn message">私信</a></li>
+                        <li><a href="#" class="btn concern">+关注</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="userItem">
+            <ul>
+                <li><a href="/user/{{u.id}}" id="Article" class="active"><span
+                        class="iconfont">&#xe643;</span><span>文章</span></a></li>
+                <li><a href="javascript:" id="Comment" u="{{u.id}}"><span
+                        class="iconfont">&#xe60c;</span><span>评论</span></a></li>
+                <li><a href="javascript:" id="Like"><span class="iconfont">&#xe63b;</span><span>喜欢</span></a></li>
+                <li><a href="javascript:" id="Dynamic"><span class="iconfont">&#xe605;</span><span>动态</span></a></li>
+            </ul>
+        </div>
+        <div id="BlogContent">
+            {{each articles}}
+            <div class="blog">
+                <div class="blog_img">
+                    {{if $value.firstImg}}
+                    <a href="/details?article={{$value.id}}"><img src="{{$value.firstImg}}" alt=""></a>
+                    {{/if}}
+                </div>
+                <div class="blog_title"><a href="/details?article={{$value.id}}">{{$value.title}}</a></div>
+                <div class="blog_content"><p>{{ $value.abstract}}....</p></div>
+                <div class="blog_user">
+                    <span><span class="icon iconfont">&#xe620;</span>{{$value.commentNumber}}</span>
+                    <span class="user_center"><span class="icon iconfont">&#xe633;</span>{{$value.likes}}</span>
+                    <span class="icon iconfont">&#xe675;<span>{{$value.createTime}}</span></span>
+                    <a href="/update/{{$value.id}}" class="myEdit">编辑</a>
+                    <a href="javascript:void(0);" id="myDel" class="myEdit" onclick="myDelete(this);"
+                       aId="{{$value.id}}">删除</a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div id="CommentContent" style="display: none"></div>
+    </div>
+    <div class="right">
+        <div class="usrIntroduce">
+            <span>个人介绍</span><a href="#" id="edit" class="edit"><span class="iconfont">&#xe795;</span>编辑</a><br>
+            <div id="showIntroduce" style="margin-top: 20px">{{u.person_introduce}}</div>
+            <div class="userEdit" id="userEdit">
+                <textarea id="editIntroduce">{{u.person_introduce}}</textarea>
+                <a href="#" id="editSave" class="save">保存</a>
+                <a href="#" id="cancel" class="cancel"> 取消</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="send">
+    <div class="sendEdit">
+        <a href="javascript:" class="sendCancel">X</a>
+        <h2>给Ta发私信</h2>
+        <textarea placeholder="输入内容..." class="sendContent"></textarea>
+        <button class="sendLetter">发送</button>
+    </div>
+</div>
+{{/block}}
+
+{{block 'js'}}
+<script id="user_comment" type="text/html">
+    <% for(var i = 0; i < comment.length; i++){ %>
+    <div class="commentItem">
+        <span class="commentContent"><%=comment[i].content%></span>
+        <span class="commentTime"><%=comment[i].createTime%></span>
+        <a href="/details?article=<%=comment[i].articleId%>" class="commentArticleTitle"><p class="commentArticle">
+            <%=comment[i].articleID.title%></p></a>
+        <a href="javascript:void(0);" class="commentDel" id="commentDel" onclick="myCommentDelete(this);"
+           cId="<%=comment[i]._id%>" aId="<%=comment[i].articleID._id%>">删除</a>
+    </div>
+    <% } %>
+</script>
+<script src="../public/other/jquery-3.4.1.min.js"></script>
+<script src="../public/js/user.js"></script>
+{{/block}}
+
+

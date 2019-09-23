@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../public/css/edit.css">
+    <link rel="stylesheet" href="../public/font_icon/iconfont.css">
+</head>
+<body>
+<div id="tips" class="tips"></div>
+<div class="home">
+    <a href="/">
+        <span class="iconfont">&#xe6b1;</span>回首页
+    </a>
+</div>
+
+<div class="contain">
+    <div class="title">
+        <form action="/edit" method="post" id="form_data">
+            <input type="text" id="Title" name="title" placeholder="输入文章标题" required>
+            <input type="submit" value="发布文章" class="input_btn">
+        </form>
+    </div>
+    <div id="editor" class="text"></div>
+</div>
+<div id="tem" flag="{{flag}}" aId="{{aId}}" style="display: none">
+    <div id="tem_content">
+        {{if article }}{{article.content}}{{/if}}
+    </div>
+    <div id="tem_title">{{if article }}{{article.title}}{{/if}}</div>
+</div>
+<script src="../public/other/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="../public/other/wangEditor.js"></script>
+<script src="../public/js/edit.js"></script>
+</body>
+</html>

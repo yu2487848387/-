@@ -1,0 +1,347 @@
+
+.contain {
+    width: 980px;
+    height: 1000px;
+    margin: 20px auto;
+    /*border: 1px solid skyblue;*/
+}
+
+.contain .left {
+    width: 640px;
+    float: left;
+}
+
+.contain .right {
+    width: 280px;
+    float: right;
+}
+
+.contain .left img {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 20px;
+}
+
+.contain .left .userText {
+    padding-top: 15px;
+}
+
+.contain .left .userName a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 21px;
+    font-weight: bolder;
+}
+
+.contain .left .userList {
+    margin-top: 15px;
+}
+
+.contain .left .userList ul {
+    list-style: none;
+    overflow: hidden;
+}
+
+.contain .left .userList ul li {
+    float: left;
+}
+
+.contain .left .userList ul li a {
+    display: inline-block;
+    text-decoration: none;
+    border-right: 1px #f0f0f0 solid;
+    padding: 0 10px 0 5px;
+}
+
+.contain .left .userList ul li a span {
+    color: #333333;
+    font-size: 15px;
+}
+
+.contain .left .userList ul li a p {
+    color: #969696;
+    font-size: 12px;
+}
+
+.contain .left .userList ul li .btn {
+    width: 80px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 35px;
+}
+
+.contain .left .userList ul li .message {
+    margin-left: 20px;
+    border: 1px solid #42c02e;
+    color: #42c02e;
+}
+
+.contain .left .userList ul li .message:hover {
+    background-color: rgba(75, 192, 72, 0.1);
+}
+
+.contain .left .userList ul li .concern {
+    background-color: #42c02e;
+    color: white;
+    margin-left: 10px;
+}
+
+.contain .left .userList ul li .concern:hover {
+    background-color: #07C030;
+}
+
+
+/************/
+.contain .left .userItem {
+    margin-top: 60px;
+}
+
+.contain .left .userItem ul {
+    list-style: none;
+    overflow: hidden;
+}
+
+.contain .left .userItem ul li {
+    float: left;
+}
+
+.contain .left .userItem ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #969696;
+    font-size: 15px;
+    width: 120px;
+    height: 35px;
+    margin-left: 1px;
+    text-align: center;
+    line-height: 35px;
+}
+
+.contain .left .userItem ul li .active {
+    border-bottom: 2px solid #646464;
+    color: #646464;
+}
+
+.contain .left .userItem ul li a:hover {
+    color: #646464;
+    border-bottom: 2px solid #646464;
+}
+
+.contain .left .userItem ul li a span:first-child {
+    margin-right: 8px;
+}
+
+/***************/
+.right .usrIntroduce{
+    margin-top: 20px;
+}
+.right .usrIntroduce span{
+    font-size: 15px;
+    color: #969696;
+}
+.right .usrIntroduce .edit {
+    text-decoration: none;
+    color: #969696;
+    float: right;
+    display: none;
+}
+.right .usrIntroduce .edit:hover{
+    color: #646464;
+}
+.right .usrIntroduce .userEdit{
+    display: none;
+    margin-top: 20px;
+}
+.right .usrIntroduce textarea{
+    height: 60px;
+    width: 240px;
+    resize: none;
+    background-color: #F7F7F7;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-family: "微软雅黑 Light", serif;
+    font-weight: bolder;
+}
+.right .usrIntroduce .userEdit .save{
+    text-decoration: none;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #3DB922;
+    color: #3DB922;
+}
+.right .usrIntroduce .userEdit .save:hover{
+    background-color: rgba(75, 192, 72, 0.1);
+}
+
+.right .usrIntroduce .userEdit .cancel{
+    text-decoration: none;
+    color: #969696;
+    margin-left: 10px;
+}
+.right .usrIntroduce .userEdit .cancel:hover{
+    color: #646464;
+}
+
+/*blog*/
+.left .blog{
+    height: 180px;
+    border-bottom: #f0f0f0 1px solid;
+    padding-top: 1px;
+}
+.left .blog_img{
+    margin-top: 35px;
+}
+.left .blog img{
+    width: 150px;
+    height: 100px;
+    float: right;
+    border-radius: 0;
+}
+.left .blog .blog_title,.blog_content{
+    width: 450px;
+}
+.left .blog .blog_title a{
+    text-decoration: none;
+    font-size: 18px;
+    color: #333333;
+    font-weight: bolder;
+}
+.left .blog .blog_title a:hover{
+    border-bottom: 1px solid #222222;
+}
+.left .blog .blog_content p{
+    font-size: 13px;
+    color: #999999;
+    margin-top: 10px;
+}
+.blog .blog_user{
+    color:#999999 ;
+    margin: 10px auto;
+}
+.blog .blog_user .user_center{
+    margin: 0 10px 0;
+}
+.blog .blog_user  a{
+    text-decoration: none;
+    color: #969696;
+    margin-left: 18px;
+    display: none;
+}
+.blog .blog_user  a:hover{
+    color: #333;
+}
+/*blog*/
+
+/*评论*/
+#CommentContent .commentItem {
+    border-bottom: 1px solid #f0f0f0;
+    padding-top: 20px;
+    position: relative;
+}
+#CommentContent .commentItem .commentContent{
+    color: #333;
+    font-size: 18px;
+}
+#CommentContent .commentItem .commentTime{
+    font-size: 12px;
+    color: #969696;
+    float: right;
+}
+#CommentContent .commentItem .commentArticle{
+    color: #333;
+    font-size: 20px;
+    font-weight: bolder;
+    min-height: 50px;
+    width: 80%;
+    border-left: 3px solid #d9d9d9;
+    line-height: 50px;
+    margin-top: 15px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+#CommentContent .commentItem .commentArticleTitle{
+    width: 80%;
+    text-decoration: none;
+    display: block;
+}
+#CommentContent .commentItem .commentDel{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    text-decoration: none;
+    color: #969696;
+    display: none;
+}
+#CommentContent .commentItem .commentDel:hover{
+    color: #333;
+}
+
+.send{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(150,150,150,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.send .sendEdit{
+    position: absolute;
+    width: 500px;
+    height: 350px;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -175px;
+    border: 1px solid skyblue;
+}
+.sendEdit .sendCancel{
+    text-decoration: none;
+    position: absolute;
+    right: 10px;
+    top:8px;
+    color: #333;
+}
+.sendEdit h2{
+    text-align: center;
+    margin-top: 20px;
+}
+.sendEdit textarea{
+    width: 300px;
+    height: 80px;
+    resize: none;
+    margin-top: 40px;
+    outline: none;
+    margin-left: 85px;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    background-color: hsla(0,0%,71%,.1);
+    padding: 5px 15px;
+    font-size: 15px;
+    font-family: "微软雅黑 Light", serif;
+}
+.sendEdit button{
+    display: block;
+    width: 334px;
+    height: 35px;
+    margin-left: 85px;
+    border-radius: 6px;
+    background-color:#3DB922;
+    border: none;
+    outline: none;
+    color: white;
+    margin-top: 15px;
+}
+.sendEdit button:hover{
+    background-color:#0EB92F;
+}

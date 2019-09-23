@@ -1,0 +1,56 @@
+{{extend './base.html'}}
+
+{{block 'title'}}设置{{/block}}
+
+{{block 'css'}}
+<link rel="stylesheet" href="../public/css/messages.css">
+{{/block}}
+
+{{block 'content'}}
+<div class="body">
+    {{if comments}}
+    <div class="body_right">
+        <h3>收到的评论</h3>
+        {{each comments}}
+        <div class="receiveComment">
+            <span>
+                <a href="/user/{{$value.userId}}" class="receiveUser">{{$value.userName}}</a>&nbsp;评论了你 <span
+                    class="Time">{{$value.createTime}}</span>
+                <a href="/details?article={{$value.articleId}}" class="receiveArticle">{{$value.content}}</a>
+            </span>
+            <a href="/user/{{$value.userId}}"><img src="{{$value.userHeaderImg}}" alt=""></a>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+    {{if letters}}
+    <div class="body_right r2">
+        <h3>收到的留言</h3>
+        {{each letters}}
+        <div class="letterList">
+        <img src="/{{$value.fromHeader_img}}" alt="">
+        <a href="#">{{$value.fromNickname}}</a>
+        <span class="letterTime">{{$value.createTime}}</span><br>
+        <span class="letterContent">给你留言: {{$value.content}}</span>
+    </div>
+        {{/each}}
+    </div>
+    {{/if}}
+    <div class="body_left">
+        <ul>
+            <li><a href="/messages" {{if comments}} class="active" {{/if}}><span
+                    class="icon iconfont">&#xe664;</span>评论</a></li>
+            <li><a href="/messages/letters" {{if letters}}class="active" {{/if}}><span
+                    class="icon iconfont">&#xe642;</span>留言</a></li>
+            <li><a href="#"><span class="icon iconfont">&#xe612;</span>关注</a></li>
+            <li><a href="#"><span class="icon iconfont">&#xe7aa;</span>点赞</a></li>
+        </ul>
+    </div>
+</div>
+{{/block}}
+
+
+{{block 'js'}}
+<script src="../public/other/jquery-3.4.1.min.js"></script>
+<script src="../public/js/messages.js"></script>
+{{/block}}

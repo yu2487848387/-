@@ -1,0 +1,237 @@
+/*****************/
+img{
+    max-width: 800px;
+}
+.contain {
+    width: 800px;
+    height: auto;
+    margin: 40px auto;
+}
+
+.contain .title {
+    width: 100%;
+    height: auto;
+    text-align: left;
+    color: #333333;
+    font-size: 34px;
+    font-weight: bolder;
+}
+
+.contain .user {
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.contain .user img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.contain .user .user_img {
+    float: left;
+}
+
+.contain .user .user_name {
+    text-decoration: none;
+    font-size: 16px;
+    color: #333333;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.contain .user .concern {
+    text-decoration: none;
+    background-color: #3DB922;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 12px;
+    color: white;
+    margin-left: 5px;
+}
+
+.contain .user .concern:hover {
+    background-color: #07B914;
+}
+
+.contain .user span {
+    color: #969696;
+    font-size: 12px;
+    padding-left: 15px;
+}
+.contain .content{
+    width: 100%;
+    margin-top: 30px;
+    line-height: 30px;
+}
+.contain .content p{
+    font-size: 16px;
+}
+
+/***************************/
+
+.side{
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+}
+.side ul{
+    list-style: none;
+}
+.side ul li a{
+    display: inline-block;
+    text-decoration: none;
+    color: rgba(51,51,51,0.7);
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border: 1px solid rgba(51,51,51,0.3);
+    line-height: 50px;
+}
+.side ul li .side_center{
+    border-bottom: none ;
+}
+.side ul li .first_side{
+    display: none;
+}
+.side ul li a span{
+    font-size: 25px;
+}
+
+.side ul li a:hover{
+    background-color: rgba(102,102,102,0.1);
+}
+
+/*comment*/
+.comment{
+    width: 800px;
+    margin: 20px auto;
+}
+.comment img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.comment textarea{
+    height: 60px;
+    width: 600px;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    vertical-align: top;
+    outline-style: none;
+    background-color: hsla(0,0%,71%,.1);
+    resize: none;
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-family: "微软雅黑 Light", serif;
+    margin-left: 5px;
+}
+.comment .comment_bottom{
+    margin-top: 20px;
+    width: 690px;
+    text-align: right;
+    display: none;
+}
+.comment .comment_bottom a{
+    text-decoration: none;
+    display: inline-block;
+}
+.comment .comment_bottom a:nth-child(1){
+    font-size: 16px;
+    color: #969696;
+    margin-right: 20px;
+}
+.comment .comment_bottom a:nth-child(1):hover{
+    color: #333;
+}
+
+.comment .comment_bottom a:nth-child(2){
+    text-align: center;
+    width: 50px;
+    padding: 8px 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    color: #fff!important;
+    background-color: #42c02e;
+    cursor: pointer;
+    outline: none;
+}
+.comment .comment_bottom a:nth-child(2):hover{
+    background-color:#09C041 ;
+}
+/************/
+
+.comment_list{
+    width: 800px;
+    margin: 30px auto;
+}
+.comment_list .list_head{
+    font-size: 18px;
+    font-weight: bolder;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.comment_list .comment_item{
+    margin-top: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.comment_list .comment_item  .comment_item_head{
+    overflow: hidden;
+}
+.comment_list .comment_item .comment_item_head img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 15px;
+}
+.comment_list .comment_item .comment_item_head span{
+    font-size: 12px;
+    color: #969696;
+}
+.comment_list .comment_item .comment_item_head a:nth-child(2){
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+}
+.comment_list .comment_item .comment_item_content{
+    margin: 20px 0;
+}
+
+.comment_list .comment_item .comment_item_content .comment_text{
+    display: inline-block;
+    width: 700px;
+}
+.comment_list .comment_item .comment_item_content a{
+    text-decoration: none;
+    color: #333;
+    float: right;
+}
+.comment_list .comment_item .comment_item_content .red{
+    color: red;
+    font-weight: bolder;
+}
+/********没有登陆时评论******/
+
+#comment_login{
+    text-decoration: none;
+    display: inline-block;
+    width: 65px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #3DB922;
+    border-radius:16px;
+    font-size: 14px;
+    color: white;
+    position: relative;
+    left: -360px;
+}

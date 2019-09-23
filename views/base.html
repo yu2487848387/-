@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {{ block 'title'}}博客{{ /block }}
+    </title>
+    <link rel="stylesheet" href="../public/css/base.css">
+    <link rel="stylesheet" href="../public/font_icon/iconfont.css">
+    {{ block 'css'}}{{ /block }}
+</head>
+<body>
+<div class="header">
+    <ul class="header_left">
+        <li class="li_float"><a href="/" class="red">博客</a></li>
+    </ul>
+    <ul class="header_center">
+        <li class="li_float"><a href="/" class="red"><span class="icon iconfont">&#xe61a;</span>发现</a></li>
+        <li class="li_float"><a href="#"><span class="icon iconfont">&#xe65b;</span>关注</a></li>
+        <li class="li_float" id="li_messages"><a href="/messages"><span class="icon iconfont">&#xe61f;</span>消息</a>
+            <ul id="drop_menu" class="hidden_menu">
+                <li><a href="/messages"><span class="icon iconfont">&#xe664;</span>评论</a></li>
+                <li><a href="/messages/letters"><span class="icon iconfont">&#xe642;</span>留言</a></li>
+                <li><a href="#"><span class="icon iconfont">&#xe612;</span>关注</a></li>
+                <li><a href="#"><span class="icon iconfont">&#xe7aa;</span>点赞</a></li>
+            </ul>
+        </li>
+        <li class="li_float"><input type="text" placeholder="搜索"><span class="icon iconfont abs">&#xe611;</span></li>
+    </ul>
+    <ul class="header_right">
+        {{ if user }}
+        <li class="li_float" id="li_messages2"><a href="#" class="r4"><img src="..\{{user.header_img}}" alt=""></a>
+            <ul id="drop_menu2" class="hidden_menu">
+                <li><a href="/user/{{user._id}}"><span class="icon iconfont">&#xe638;</span>个人主页</a></li>
+                <li><a href="/settings"><span class="icon iconfont">&#xe613;</span>设置</a></li>
+                <li><a href="/logout"><span class="icon iconfont">&#xe66a;</span>退出</a></li>
+            </ul>
+        </li>
+        {{ else }}
+        <li class="li_float"><a href="/login" class="r1">登陆</a></li>
+        <li class="li_float"><a href="/register" class="r2">注册</a></li>
+        {{ /if }}
+        <li class="li_float"><a href="/edit" class="r3"><span class="icon iconfont">&#xe60e;</span>写文章</a></li>
+    </ul>
+</div>
+{{ block 'content'}} {{ /block }}
+<script src="../public/js/base.js"></script>
+{{ block 'js'}} {{ /block }}
+</body>
+</html>

@@ -1,0 +1,84 @@
+{{extend './base.html'}}
+
+{{block 'title'}}{{Article.title}}{{/block}}
+{{block 'css'}}
+<link rel="stylesheet" href="../public/css/details.css">
+<script src="../node_modules/art-template/lib/template-web.js"></script>
+{{/block}}
+
+{{block 'content'}}
+<span style="display:none" id="articleId" uId="{{author.id}}">{{Article.id}}</span>
+<div class="contain">
+    <div class="title">{{Article.title}}</div>
+    <div class="user">
+        <a href="/user/{{author.id}}" class="user_img"><img src="{{author.header_img}}" alt=""></a>
+        <a href="/user/{{author.id}}" class="user_name">{{Article.authorName}}</a>
+        <a href="#" class="concern">+关注</a>
+        <br>
+        <span>{{Article.createTime}} 字数 {{Article.wordNumber}} 阅读 2994评论 9喜欢 {{Article.likes}}</span>
+    </div>
+    <div class="content" id="content">
+        {{@Article.content}}
+    </div>
+</div>
+<div class="side">
+    <ul>
+        <li><a href="javascript:" class="side_center first_side" title="回到顶部"><span class="iconfont">&#xe631;</span></a>
+        </li>
+        <li><a href="#" class="side_center" title="收藏"><span class="iconfont">&#xe634;</span></a></li>
+        <li><a href="#" class="side_center" title="喜欢"><span class="iconfont">&#xe7aa;</span></a></li>
+        <li><a href="#" title="分享"><span class="iconfont">&#xe66d;</span></a></li>
+    </ul>
+</div>
+
+{{if user}}
+<div class="comment">
+    <img src="{{user.header_img}}" alt="header_img">
+    <textarea id="comment" name="comment" placeholder="写下你的评论..."></textarea>
+    <div id="comment_bottom" class="comment_bottom">
+        <a href="javascript:" id="cancel">取消</a>
+        <a href="javascript:" id="submit">发送</a>
+    </div>
+</div>
+{{else}}
+<div class="comment">
+    <img src="../public/img/tou1.jpg" alt="">
+    <textarea readonly placeholder="登陆后发表评论..."></textarea>
+    <a href="/login" id="comment_login">登陆</a>
+</div>
+{{/if}}
+<div class="comment_list" id="comment_list">
+
+</div>
+{{/block}}
+
+
+{{block 'js'}}
+<script id="user_comment" type="text/html">
+    <div class="list_head">
+        <span><%= comment.length %>条评论</span>
+    </div>
+    <% for(var i = 0; i < comment.length; i++){ %>
+    <div class="comment_item">
+        <div class="comment_item_head">
+            <a href="/user/<%=comment[i].userId%>"><img src="<%=comment[i].userHeaderImg %>" alt=""></a>
+            <a href="/user/<%=comment[i].userId%>"><%= comment[i].userName %> </a><br>
+            <span><%= comment.length-i %>楼 · <%= comment[i].createTime %></span>
+        </div>
+        <div class="comment_item_content">
+            <span class="comment_text"><%= comment[i].content %></span>
+            <a href="javascript:void(0);" onclick="commentLike(this);" commentId=<%=comment[i]._id%>
+                <% if (comment[i].flag==='1') { %> <span class="iconfont"><span id="redTrue" class="red">&#xe62a;</span></span> <% }
+                else if (comment[i].flag==='0' || comment[i].flag==='-1') { %> <span class="iconfont"><span id="redFalse" class="">&#xe62a;</span></span><% } %>
+                <span class="likesNum" likesFlag=<%= comment[i].flag %>>  <%= comment[i].likes %>  </span>
+            </a>
+        </div>
+    </div>
+    <% } %>
+</script>
+<script src="../public/other/jquery-3.4.1.min.js"></script>
+<script src="../public/js/details.js"></script>
+{{/block}}
+
+
+
