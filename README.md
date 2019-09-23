@@ -30,22 +30,36 @@
 
 1. 登陆
 
-   ![img1](<https://raw.githubusercontent.com/yu2487848387/jianshuBlog/master/readmeImages/2.jpg>)
+   ![1](<https://raw.githubusercontent.com/yu2487848387/jianshuBlog/master/readmeImages/1.jpg>)
 
 2. 首页
 
-   
+   ![2](<https://raw.githubusercontent.com/yu2487848387/jianshuBlog/master/readmeImages/2.jpg>)
 
 3. 文章详情页
 
+   ![3](<https://raw.githubusercontent.com/yu2487848387/jianshuBlog/master/readmeImages/3.jpg>)
+
 4. 评论
+
+   ![4](<https://raw.githubusercontent.com/yu2487848387/jianshuBlog/master/readmeImages/4.jpg>)
 
 5. 发表
 
+   ![5](<https://raw.githubusercontent.com/yu2487848387/jianshuBlog/master/readmeImages/5.jpg>)
+
 6. 个人中心
+
+   ![6](<https://raw.githubusercontent.com/yu2487848387/jianshuBlog/master/readmeImages/6.jpg>)
 
 7. 设置
 
+   ![7](<https://raw.githubusercontent.com/yu2487848387/jianshuBlog/master/readmeImages/7.jpg>)
+
 8. 消息
 
+   ![8](<https://raw.githubusercontent.com/yu2487848387/jianshuBlog/master/readmeImages/8.jpg>)
+
 9. 后台
+
+   ![9](<https://raw.githubusercontent.com/yu2487848387/jianshuBlog/master/readmeImages/2.jpg>)
